@@ -6,9 +6,9 @@ if (isset($_POST["type"]) && $_POST["type"] === "addProduct") {
     $product_name         = $_POST["Products_name"];
     $product_title        = $_POST["Products_title"];
     $product_price        = $_POST["Products_price"];
-    $product_type         = $_POST["Products_type"];
+    $product_brand       = $_POST["Products_brand"];
     $products_Date_Create = $_POST["Products_Date_Create"];
-    $products_category_id = $_POST["Products_category_id"];
+    $products_category_id = $_POST["Products_category"];
 
     // Handle image upload
     $imageName = "";
@@ -23,11 +23,11 @@ if (isset($_POST["type"]) && $_POST["type"] === "addProduct") {
     // Insert into DB
     $sql = "INSERT INTO products (
                 product_id, product_name, image, title_detail,
-                price, product_type, create_at, 
+                price, brand_id, create_at, 
                 cate_id
             ) VALUES (
                 '$product_id', '$product_name', '$imageName', '$product_title',
-                '$product_price', '$product_type', '$products_Date_Create',
+                '$product_price', '$product_brand', '$products_Date_Create',
                 '$products_category_id'
             )";
 
